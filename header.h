@@ -31,6 +31,7 @@ int     init_game(t_game *game);
 //logic.c
 void    add_cell(t_game *game);
 int     handle_pressed(t_game *game, int pressed);
+int     isover(t_game *game);
 
 //display.c
 void    draw_board(t_game *game);

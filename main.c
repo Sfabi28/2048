@@ -56,15 +56,33 @@ int main()
             draw_board(&game);
         }
 
-        // int end_game = is_over(&game);
+        int end_game = isover(&game);
 
-        // if (end_game == 1)
-        //     handle_rematch(&game);
-        // else if (end_game == 2)
-        // {
-        //     handle_end(&game);
-        //     break;
-        // }
+        if (end_game == 1)
+        {
+            mvprintw(LINES - 1, 0, "Hai vinto! Premi ENTER per continuare o ESC per uscire.");
+            
+            while (1)
+            {
+                int answer = getch();
+                if (answer == 27)
+                {
+                    endwin();
+                    return (0);
+                }
+                if (answer == 10)
+                {
+                    mvprintw(LINES - 1, 0, "                                                    ");
+                    break;
+                }
+            }
+        }
+        else if (end_game == 2)
+        {
+            mvprintw(LINES - 1, 0, "GAME OVER! Premi un tasto per uscire.");
+            getch();
+            break;
+        }
     }
 
     endwin();

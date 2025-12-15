@@ -64,3 +64,38 @@ int handle_pressed(t_game *game, int pressed)
 
     return (moved);
 }
+
+int isover(t_game *game)
+{
+    for (int i = 0; i < 4; i++) //check se c'e' un blocco a 2048
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (game->board[i][j] == WIN_VALUE && game->win == 0)
+            {
+                game->win = 1;
+                return (1);
+            }
+        }
+    }
+
+    for (int i = 0; i < 4; i++) //check se ci sono mosse disponibili
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (i > 0 && game->board[i - 1][j] == game->board[i][j])
+                return (0);
+            
+            if (j < 3 && game->board[i][j + 1] == game->board[i][j])
+                return (0);
+            
+            if (game->board[i][j] == 0)
+                return (0);
+        }
+    }
+
+    return (2); //game over
+}
+
+
+

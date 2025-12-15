@@ -50,7 +50,6 @@ int align(int *row) //sposta tutti i numeri a sinistra
 int merge(int *row) //unisce i numeri uguali
 {
     int moves = 0;
-    int k = 0;
 
     for (int i = 0; i < 3; i++)
     {
@@ -59,7 +58,7 @@ int merge(int *row) //unisce i numeri uguali
             row[i] *= 2;
             row[i + 1] = 0;
             moves++;
-            //aumentare elo score una volta che lo ho
+            //aumentare lo score una volta che lo ho
         }
     }
 
