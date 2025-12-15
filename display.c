@@ -1,6 +1,6 @@
 #include "header.h"
 
-void    draw_board(t_game *game)
+void    draw_board(t_game *game)  //rendere l atabella piu bellina
 {
 
     clear();
@@ -17,7 +17,7 @@ void    draw_board(t_game *game)
 
             if (game->board[i][j] != 0)
             {
-                mvprintw(screen_y, screen_x, "[%d]", game->board[i][j]);
+                mvprintw(screen_y, screen_x, "[ %d ]", game->board[i][j]);
             }
             else
             {

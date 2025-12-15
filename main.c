@@ -56,15 +56,15 @@ int main()
             draw_board(&game);
         }
 
-        int end_game = is_over(&game);
+        // int end_game = is_over(&game);
 
-        if (end_game == 1)
-            handle_rematch(&game);
-        else if (end_game == 2)
-        {
-            handle_end(&game);
-            break;
-        }
+        // if (end_game == 1)
+        //     handle_rematch(&game);
+        // else if (end_game == 2)
+        // {
+        //     handle_end(&game);
+        //     break;
+        // }
     }
 
     endwin();

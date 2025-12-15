@@ -26,15 +26,29 @@ typedef struct s_game
 extern int g_resize;
 
 //init.c
-int    init_game(t_game *game);
+int     init_game(t_game *game);
 
 //logic.c
 void    add_cell(t_game *game);
+int     handle_pressed(t_game *game, int pressed);
 
 //display.c
 void    draw_board(t_game *game);
 
+//movement.c
+int     move_left(t_game *game);
+int     move_right(t_game *game);
+int     move_up(t_game *game);
+int     move_down(t_game *game);
+
+//utils.c
+void    mirror(int *row);
+int     align(int *row);
+int     merge(int *row);
+void    transpose(t_game *game);
+
 //main.c (per completezza)
-void   sig_handler(int signum);
+void    sig_handler(int signum);
+void    start_ncurses(void);
 
 #endif

@@ -39,3 +39,28 @@ void    add_cell(t_game *game)
         }
     }
 }
+
+int handle_pressed(t_game *game, int pressed)
+{
+    int moved = 0;
+
+    switch (pressed)
+    {
+        case KEY_UP:
+            moved = move_up(game);
+            break;
+        case KEY_DOWN:
+            moved = move_down(game);
+            break;
+        case KEY_LEFT:
+            moved = move_left(game);
+            break;
+        case KEY_RIGHT:
+            moved = move_right(game);
+            break;
+        default:
+            break;
+    }
+
+    return (moved);
+}
