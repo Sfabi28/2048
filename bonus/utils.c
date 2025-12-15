@@ -66,3 +66,48 @@ int merge(int *row, t_game *game) //unisce i numeri uguali
 
     return (moves);
 }
+
+// Carica il punteggio dal file
+void load_best_score(t_game *game)
+{
+    int     fd;
+    char    buffer[20];
+    int     bytes_read;
+
+    game->best_score = 0;
+
+    fd = open(".best_score", O_RDONLY);
+    if (fd < 0)
+        return;
+
+    bytes_read = read(fd, buffer, 19);
+    if (bytes_read > 0)
+    {
+        buffer[bytes_read] = '\0';
+        game->best_score = ft_atoi(buffer);
+    }
+    close(fd);
+}
+
+void update_best_score(t_game *game)
+{
+    int     fd;
+    char    *score_str;
+
+    if (game->score <= game->best_score)
+        return;
+
+    game->best_score = game->score;
+
+    fd = open(".best_score", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0)
+        return;
+
+    score_str = ft_itoa(game->best_score);
+    if (score_str)
+    {
+        write(fd, score_str, ft_strlen(score_str));
+        free(score_str);
+    }
+    close(fd);
+}

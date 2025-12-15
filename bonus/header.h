@@ -6,6 +6,7 @@
 # include <stdlib.h>
 # include <time.h>
 # include <signal.h>
+# include <fcntl.h>
 
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
@@ -20,6 +21,7 @@ typedef struct s_game
     int     board[5][5];
     int     size;
     int     score;
+    int     best_score;
     int     win;
     int     lose;
 } t_game;

@@ -18,6 +18,8 @@ int   init_game(t_game *game)
     game->lose = 0;
     game->score = 0;
     game->size = 4;
+    
+    load_best_score(game);
 
     for (int i = 0; i < game->size; i++)
     {
