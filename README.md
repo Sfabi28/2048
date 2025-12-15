@@ -28,7 +28,15 @@ A robust and feature-rich implementation of the **2048** game for the terminal, 
 ### 2. Build
 ```bash
 git clone https://github.com/Sfabi28/2048.git
-cd 2048
+cd 2048/mandatory
+make
+./2048
+```
+
+### 2.5 Bonus Build
+```bash
+git clone https://github.com/Sfabi28/2048.git
+cd 2048/bonus
 make
 ./2048
 ```
