@@ -1,0 +1,32 @@
+# 2048 - Terminal Edition 🎮
+
+![C](https://img.shields.io/badge/Language-C-00599C?style=flat&logo=c&logoColor=white)
+![Ncurses](https://img.shields.io/badge/Library-Ncurses-green)
+![42](https://img.shields.io/badge/School-42-black)
+
+A robust and feature-rich implementation of the **2048** game for the terminal, developed as a **Rush** project at 42.
+
+## ✨ Features
+
+### 🔹 Core Gameplay (Mandatory)
+* **Game Logic**: Authentic movement, merging rules, and random spawning (2 or 4).
+* **Win/Loss**: Detects **2048** victory (with option to continue) and Game Over states.
+* **Stability**: Handles window resizing signals (`SIGWINCH`) seamlessly.
+
+### 🔸 Bonus Extensions
+* **Dynamic Grid**: Choose between **4x4** (Classic) and **5x5** (Big Board) via Settings.
+* **Visuals**: Custom **ASCII Art** font for numbers, box-drawing borders, and dynamic **Colors** (cold to hot gradient).
+* **Persistence**: Independent **High Scores** saved for each grid size (`.best_score_4`, `.best_score_5`). Scores are saved in real-time to prevent data loss.
+
+## 🛠️ Installation & Usage
+
+### 1. Requirements
+* GCC, Make
+* `libncurses` (standard on macOS/Linux)
+* `libft` and `ft_printf` (Ensure they are accessible as per Makefile)
+
+### 2. Build
+```bash
+git clone <repo-url> 2048
+cd 2048
+make
