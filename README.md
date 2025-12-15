@@ -27,6 +27,14 @@ A robust and feature-rich implementation of the **2048** game for the terminal, 
 
 ### 2. Build
 ```bash
-git clone <repo-url> 2048
+git clone https://github.com/Sfabi28/2048.git
 cd 2048
 make
+./2048
+```
+
+### 3. Controls
+Key	Action
+⬆️ ⬇️ ⬅️ ➡️	Move tiles / Navigate Menu
+ESC	Return to Menu / Quit Game
+1 / 2	Menu Selection
