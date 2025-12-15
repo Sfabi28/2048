@@ -25,8 +25,16 @@ typedef struct s_game
 
 extern int g_resize;
 
+//init.c
 int    init_game(t_game *game);
 
+//logic.c
+void    add_cell(t_game *game);
+
+//display.c
+void    drawboard(t_game *game);
+
+//main.c (per completezza)
 void   sig_handler(int signum);
 
 #endif

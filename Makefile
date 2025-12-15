@@ -10,7 +10,7 @@ FT_PRINTF  = $(PRINTF_DIR)/libftprintf.a
 
 LIBS        = -lncurses -L$(LIBFT_DIR) -lft
 
-SRCS        = main.c init.c
+SRCS        = main.c init.c logic.c display.c
 OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)
