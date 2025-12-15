@@ -1,6 +1,6 @@
 #include "header.h"
 
-void    drawboard(t_game *game)
+void    draw_board(t_game *game)
 {
 
     clear();

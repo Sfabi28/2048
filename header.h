@@ -32,7 +32,7 @@ int    init_game(t_game *game);
 void    add_cell(t_game *game);
 
 //display.c
-void    drawboard(t_game *game);
+void    draw_board(t_game *game);
 
 //main.c (per completezza)
 void   sig_handler(int signum);
