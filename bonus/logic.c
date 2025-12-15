@@ -86,7 +86,7 @@ int isover(t_game *game)
             if (i > 0 && game->board[i - 1][j] == game->board[i][j])
                 return (0);
             
-            if (j < game->size && game->board[i][j + 1] == game->board[i][j])
+            if (j < game->size - 1 && game->board[i][j + 1] == game->board[i][j])
                 return (0);
             
             if (game->board[i][j] == 0)

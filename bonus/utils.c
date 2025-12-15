@@ -1,14 +1,14 @@
 #include "header.h"
 
-void mirror(int *row) //specchia la riga
+void mirror(int *row, t_game *game) //specchia la riga
 {
     int temp = row[0];
-    row[0] = row[3];
-    row[3] = temp;
+    row[0] = row[game->size - 1];
+    row[game->size - 1] = temp;
 
     temp = row[1];
-    row[1] = row[2];
-    row[2] = temp;
+    row[1] = row[game->size - 2];
+    row[game->size - 2] = temp;
 }
 
 void transpose(t_game *game)
@@ -51,7 +51,7 @@ int merge(int *row, t_game *game) //unisce i numeri uguali
 {
     int moves = 0;
 
-    for (int i = 0; i < game->size; i++)
+    for (int i = 0; i < game->size - 1; i++)
     {
         if (row[i] != 0 && row[i + 1] == row[i])
         {

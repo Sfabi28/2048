@@ -12,12 +12,12 @@
 
 enum e_const
 {
-    WIN_VALUE = 16
+    WIN_VALUE = 2048
 };
 
 typedef struct s_game
 {
-    int     board[4][4];
+    int     board[5][5];
     int     size;
     int     score;
     int     win;
@@ -36,6 +36,7 @@ int     isover(t_game *game);
 
 //display.c
 void    draw_board(t_game *game);
+void    draw_rectangle(int y, int x, int h, int w);
 
 //movement.c
 int     move_left(t_game *game);
@@ -44,13 +45,17 @@ int     move_up(t_game *game);
 int     move_down(t_game *game);
 
 //utils.c
-void    mirror(int *row);
+void    mirror(int *row, t_game *game);
 int     align(int *row, t_game *game);
 int     merge(int *row, t_game *game);
 void    transpose(t_game *game);
 
 //main.c (per completezza)
+int     menu(t_game *game);
 void    sig_handler(int signum);
 void    start_ncurses(void);
+
+//ascii.c
+void    ascii_art(int y, int x, int val);
 
 #endif

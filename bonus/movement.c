@@ -20,11 +20,11 @@ int move_right(t_game *game) //come il move left ma prima deve specchiare la str
 
     for (int i = 0; i < game->size; i++)
     {
-        mirror(game->board[i]);
+        mirror(game->board[i], game);
         moves += align(game->board[i], game);
         moves += merge(game->board[i], game);
         moves += align(game->board[i], game);
-        mirror(game->board[i]);
+        mirror(game->board[i], game);
     }
 
     return (moves);
