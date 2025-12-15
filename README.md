@@ -40,3 +40,7 @@ Key,Context,Action
 <kbd>1</kbd> / <kbd>2</kbd>,Menu,Quick select (Start / Settings)
 <kbd>ESC</kbd>,Global,Return to Menu / Quit Game
 <kbd>ENTER</kbd>,Win,Continue playing after 2048
+
+### 4. Valgrind
+
+valgrind --leak-check=full --show-leak-kinds=all --suppressions=ignore_ncurses.supp ./2048
