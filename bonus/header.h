@@ -21,7 +21,8 @@ typedef struct s_game
     int     board[5][5];
     int     size;
     int     score;
-    int     best_score;
+    int     best_score_4;
+    int     best_score_5;
     int     win;
     int     lose;
 } t_game;
@@ -51,6 +52,10 @@ void    mirror(int *row, t_game *game);
 int     align(int *row, t_game *game);
 int     merge(int *row, t_game *game);
 void    transpose(t_game *game);
+int	    get_score_from_file(char *filename);
+void	save_score_to_file(char *filename, int score);
+void	load_best_score(t_game *game);
+void	update_best_score(t_game *game);
 
 //main.c (per completezza)
 int     menu(t_game *game);

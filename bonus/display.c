@@ -23,7 +23,12 @@ void    draw_board(t_game *game)
     clear();
 
     mvprintw(1, 4, "2048 - ESC to quit");
-    mvprintw(2, 4, "Score: %d", game->score);
+    if (game->size == 4)
+        mvprintw(2, 4, "Best Score (4x4): %d", game->best_score_4);
+    else
+        mvprintw(2, 4, "Best Score (5x5): %d", game->best_score_5);
+    
+    mvprintw(3, 4, "Score: %d", game->score);
 
     for (int i = 0; i < game->size; i++)
     {

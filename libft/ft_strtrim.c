@@ -20,10 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 	int		cont;
-	int		len;
 
 	cont = 0;
-	len = ft_strlen(s1);
 	start = trim(s1, set, 1);
 	end = trim(s1, set, -1) + 1;
 	if (end < start)

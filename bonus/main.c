@@ -24,6 +24,10 @@ int menu(t_game *game)
         clear();
         mvprintw(1, 0, "Welcome on 2048!");
         mvprintw(3, 0, "1) Start Game");
+        if (game->size == 4)
+            mvprintw(3, 14, "(4x4)");
+        else
+            mvprintw(3, 14, "(5x5)");
         mvprintw(4, 0, "2) Settings");
         mvprintw(6, 0, "Esc to quit  ");
 
@@ -46,11 +50,13 @@ int menu(t_game *game)
                 if (answer == '1')
                 {
                     game->size = 4;
+                    load_best_score(game);
                     break;
                 }
                 else if (answer == '2')
                 {
                     game->size = 5;
+                    load_best_score(game);
                     break;
                 }
                 else if (answer == 27)
@@ -147,6 +153,7 @@ int main()
         }
     }
 
+    update_best_score(&game);
     endwin();
 
     return 0;
