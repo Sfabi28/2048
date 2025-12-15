@@ -34,7 +34,9 @@ make
 ```
 
 ### 3. Controls
-Key	Action
-⬆️ ⬇️ ⬅️ ➡️	Move tiles / Navigate Menu
-ESC	Return to Menu / Quit Game
-1 / 2	Menu Selection
+Key,Context,Action
+<kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd>,Game,Move tiles / Merge numbers
+<kbd>↑</kbd> <kbd>↓</kbd>,Menu,Navigate options
+<kbd>1</kbd> / <kbd>2</kbd>,Menu,Quick select (Start / Settings)
+<kbd>ESC</kbd>,Global,Return to Menu / Quit Game
+<kbd>ENTER</kbd>,Win,Continue playing after 2048
