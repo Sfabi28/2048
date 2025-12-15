@@ -67,7 +67,7 @@ int handle_pressed(t_game *game, int pressed)
 
 int isover(t_game *game)
 {
-    for (int i = 0; i < 4; i++) //check se c'e' un blocco a 2048
+    for (int i = 0; i < 4; i++) //check se c'e' un blocco a WIN_VALUE
     {
         for (int j = 0; j < 4; j++)
         {

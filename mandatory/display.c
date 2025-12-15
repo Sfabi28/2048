@@ -1,12 +1,12 @@
 #include "header.h"
 
-void    draw_board(t_game *game)  //rendere l atabella piu bellina
+void    draw_board(t_game *game)
 {
 
     clear();
 
     mvprintw(1, 2, "2048 - ESC per uscire");
-    // mvprintw(2, 2, "Score: %d", game->score);  quando implementero' lo score
+    mvprintw(2, 2, "Score: %d", game->score);
 
     for (int i = 0; i < 4; i++)
     {

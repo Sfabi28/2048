@@ -2,10 +2,10 @@ NAME        = 2048
 CC          = cc
 CFLAGS      = -Wall -Wextra -Werror
 
-LIBFT_DIR   = ./libft
+LIBFT_DIR   = ../libft
 LIBFT       = $(LIBFT_DIR)/libft.a
 
-PRINTF_DIR  = ./ft_printf
+PRINTF_DIR  = ../ft_printf
 FT_PRINTF  = $(PRINTF_DIR)/libftprintf.a
 
 LIBS        = -lncurses -L$(LIBFT_DIR) -lft

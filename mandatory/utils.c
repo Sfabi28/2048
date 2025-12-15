@@ -47,7 +47,7 @@ int align(int *row) //sposta tutti i numeri a sinistra
     return (moves);
 }
 
-int merge(int *row) //unisce i numeri uguali
+int merge(int *row, t_game *game) //unisce i numeri uguali
 {
     int moves = 0;
 
@@ -58,6 +58,8 @@ int merge(int *row) //unisce i numeri uguali
             row[i] *= 2;
             row[i + 1] = 0;
             moves++;
+
+            game->score += row[i];
             //aumentare lo score una volta che lo ho
         }
     }

@@ -72,7 +72,7 @@ int main()
                 }
                 if (answer == 10)
                 {
-                    mvprintw(LINES - 1, 0, "                                                    ");
+                    mvprintw(LINES - 1, 0, "                                                              ");
                     break;
                 }
             }

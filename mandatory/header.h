@@ -7,8 +7,8 @@
 # include <time.h>
 # include <signal.h>
 
-# include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 enum e_const
 {
@@ -45,7 +45,7 @@ int     move_down(t_game *game);
 //utils.c
 void    mirror(int *row);
 int     align(int *row);
-int     merge(int *row);
+int     merge(int *row, t_game *game);
 void    transpose(t_game *game);
 
 //main.c (per completezza)

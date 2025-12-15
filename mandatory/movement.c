@@ -7,7 +7,7 @@ int move_left(t_game *game) //deve spostare a sinistra, unire, e poi spostare nu
     for (int i = 0; i < 4; i++)
     {
         moves += align(game->board[i]);
-        moves += merge(game->board[i]);
+        moves += merge(game->board[i], game);
         moves += align(game->board[i]);
     }
 
@@ -22,7 +22,7 @@ int move_right(t_game *game) //come il move left ma prima deve specchiare la str
     {
         mirror(game->board[i]);
         moves += align(game->board[i]);
-        moves += merge(game->board[i]);
+        moves += merge(game->board[i], game);
         moves += align(game->board[i]);
         mirror(game->board[i]);
     }
