@@ -20,7 +20,17 @@ void    draw_board(t_game *game)
     int start_y = 5;
     int start_x = 4;
 
+    int min_h = 5 + (game->size * (cell_h - 1)) + 5;
+    int min_w = 4 + (game->size * (cell_w - 1)) + 4;
+
     clear();
+
+    if (LINES < min_h || COLS < min_w)
+    {
+        mvprintw(LINES / 2, (COLS - 16) / 2, "Window too small");
+        refresh();
+        return;
+    }
 
     mvprintw(1, 4, "2048 - ESC to quit");
     if (game->size == 4)
@@ -54,7 +64,7 @@ void    draw_board(t_game *game)
                     for (int col = 0; col < cell_w - 2; col++)
                         addch(' '); 
                 }
-                
+
                 ascii_art(y, x, val);
                 attroff(COLOR_PAIR(color_id));
             }
