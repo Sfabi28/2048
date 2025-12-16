@@ -44,6 +44,15 @@ int handle_pressed(t_game *game, int pressed)
 {
     int moved = 0;
 
+    int cell_w = 21;
+    int cell_h = 7;
+
+    int min_h = 5 + (game->size * (cell_h - 1)) + 5;
+    int min_w = 4 + (game->size * (cell_w - 1)) + 4;
+
+    if (LINES < min_h || COLS < min_w)
+        return 0;
+
     switch (pressed)
     {
         case KEY_UP:

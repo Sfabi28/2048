@@ -43,6 +43,7 @@ int menu(t_game *game)
 {
     while (1)
     {
+        timeout(100);
         clear();
         mvprintw(1, 0, "Welcome on 2048!");
         mvprintw(3, 0, "1) Start Game");
@@ -119,12 +120,15 @@ int main()
         add_cell(&game);
         draw_board(&game);
 
+        timeout(100);
+
         while (true)
         {
             if (g_resize)
             {
                 endwin();
                 start_ncurses();
+                timeout(100);
                 draw_board(&game);
                 g_resize = 0;
             }
