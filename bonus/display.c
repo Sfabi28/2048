@@ -37,13 +37,26 @@ void    draw_board(t_game *game)
             int y = start_y + (i * (cell_h - 1));
             int x = start_x + (j * (cell_w - 1));
 
+            attron(COLOR_PAIR(1));
             draw_rectangle(y, x, cell_h, cell_w);
+            attroff(COLOR_PAIR(1));
 
             if (game->board[i][j] != 0)
             {      
                 int val = game->board[i][j];
 
+                int color_id = get_bg_color(val);
+                attron(COLOR_PAIR(color_id));
+
+                for (int row = 1; row < cell_h - 1; row++)
+                {
+                    move(y + row, x + 1);
+                    for (int col = 0; col < cell_w - 2; col++)
+                        addch(' '); 
+                }
+                
                 ascii_art(y, x, val);
+                attroff(COLOR_PAIR(color_id));
             }
         }
     }

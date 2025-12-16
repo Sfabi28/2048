@@ -56,6 +56,7 @@ int	    get_score_from_file(char *filename);
 void	save_score_to_file(char *filename, int score);
 void	load_best_score(t_game *game);
 void	update_best_score(t_game *game);
+int      get_bg_color(int val);
 
 //main.c (per completezza)
 int     menu(t_game *game);

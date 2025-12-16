@@ -146,3 +146,20 @@ void	update_best_score(t_game *game)
 	save_score_to_file(".best_score_4", game->best_score_4);
 	save_score_to_file(".best_score_5", game->best_score_5);
 }
+
+int get_bg_color(int val)
+{
+    if (val == 0) return 1;
+    if (val == 2) return 2;
+    if (val == 4) return 3;
+    if (val == 8) return 4;
+    if (val == 16) return 5;
+    if (val == 32) return 6;
+	if (val == 64) return 7;
+	if (val == 128) return 6;
+	if (val == 256) return 7;
+	if (val == 512) return 8;
+	if (val == 1024) return 9;
+	if (val == 2048) return 10;
+	return 11;
+}

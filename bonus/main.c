@@ -15,6 +15,28 @@ void start_ncurses(void)
     noecho();
     keypad(stdscr, TRUE);
     curs_set(0);
+
+    if (has_colors())
+    {
+        start_color();
+        
+        init_pair(1, COLOR_WHITE, COLOR_BLACK);
+
+        init_pair(2, COLOR_BLACK, COLOR_YELLOW); //2
+        init_pair(3, COLOR_BLACK, COLOR_RED);   //4
+        init_pair(4, COLOR_WHITE, COLOR_MAGENTA); //8
+        init_pair(5, COLOR_WHITE, COLOR_BLUE);  //16
+        init_pair(6, COLOR_BLACK, COLOR_GREEN); //32
+        init_pair(7, COLOR_BLACK, COLOR_CYAN); //64
+        init_pair(6, COLOR_BLACK, COLOR_WHITE); //128
+        init_pair(7, COLOR_WHITE, COLOR_YELLOW); //256
+        init_pair(8, COLOR_WHITE, COLOR_RED);   //512
+        init_pair(9, COLOR_BLACK, COLOR_MAGENTA); //1024
+        init_pair(10, COLOR_BLACK, COLOR_BLUE);  //2048
+        init_pair(11, COLOR_BLACK, COLOR_GREEN);  //4096+
+
+        bkgd(COLOR_PAIR(1));
+    }
 }
 
 int menu(t_game *game)
